@@ -1,0 +1,19 @@
+<?php
+
+namespace Plsatin\Caldav;
+
+require_once('SimpleCalDAVClient.php');
+
+
+
+class Caldav
+{
+
+    public function test(String $sName)
+    {
+
+        return 'Hi ' . $sName . '! How are you doing today?';
+
+    }
+
+}

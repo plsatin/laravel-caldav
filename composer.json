@@ -1,0 +1,18 @@
+{
+    "name": "plsatin/caldav",
+    "description": "simpleCalDAV for Laravel",
+    "autoload": {
+        "psr-4": {
+            "Plsatin\\Caldav\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pavel Satin",
+            "email": "it4@rezhcable.ru"
+        }
+    ],
+    "require": {
+        "php-curl": "^7.3|^8.0"
+    }
+}
