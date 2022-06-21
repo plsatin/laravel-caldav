@@ -9,7 +9,7 @@
 * @license   http://www.gnu.org/licenses/lgpl-3.0.txt  GNU LGPL version 3 or later
 */
 
-namespace Plsatin\Caldav\Xmlutil;
+namespace Plsatin\Caldav\XMLUtilities;
 
 
 require_once('AWLUtilities.php');
