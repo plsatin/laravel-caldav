@@ -11,11 +11,10 @@
 */
 
 
-namespace Plsatin\Caldav\Include;
+namespace Plsatin\Caldav\Xmlutil;
 
 
-use Plsatin\Caldav\Include\XMLElement;
-
+use Plsatin\Caldav\Xmlutil\XMLElement;
 // require_once("XMLElement.php");
 
 /**

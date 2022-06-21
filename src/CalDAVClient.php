@@ -13,11 +13,11 @@
 namespace Plsatin\Caldav;
 
 use Plsatin\Caldav\CalDAVCalendar;
-use Plsatin\Caldav\Include\XMLDocument;
-use Plsatin\Caldav\Include\XMLElement;
+use Plsatin\Caldav\Xmlutil\XMLDocument;
+use Plsatin\Caldav\Xmlutil\XMLElement;
 
 // require_once('CalDAVCalendar.php');
-// require_once 'include/XMLDocument.php';
+// require_once 'Xmlutil/XMLDocument.php';
 
 
 
