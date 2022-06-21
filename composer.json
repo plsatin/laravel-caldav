@@ -11,8 +11,5 @@
             "name": "Pavel Satin",
             "email": "it4@rezhcable.ru"
         }
-    ],
-    "require": {
-        "php-curl": "^7.3|^8.0"
-    }
+    ]
 }
