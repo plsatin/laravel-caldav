@@ -44,16 +44,16 @@ class CalDavEventController extends Controller
     public function newEvent(Request $request)
     {
        
-            $summaryEvent = $request->input('summary');
-            $startEvent = date( 'Ymd\THis', strtotime( $request->input('start')) );
-            $endEvent = date( 'Ymd\THis', strtotime( $request->input('end') ) );
-            $descriptionEvent = $request->input('description');
-            $locationEvent = $request->input('location');
-        
-            $NewUUID = uniqid();
-      
-        
-            $NewEvent = 'BEGIN:VCALENDAR
+        $summaryEvent = $request->input('summary');
+        $startEvent = date( 'Ymd\THis', strtotime( $request->input('start')) );
+        $endEvent = date( 'Ymd\THis', strtotime( $request->input('end') ) );
+        $descriptionEvent = $request->input('description');
+        $locationEvent = $request->input('location');
+    
+        $NewUUID = uniqid();
+    
+    
+        $NewEvent = 'BEGIN:VCALENDAR
 PRODID:-//REZHCABLE//CalDAV//RU
 VERSION:2.0
 BEGIN:VTIMEZONE
@@ -71,18 +71,18 @@ DESCRIPTION:'.$descriptionEvent.'
 END:VEVENT
 END:VCALENDAR';
 
-            $client = new SimpleCalDAVClient();
-        
-            try {
-                
-                $client->connect(env('CALDAV_URL'), env('CALDAV_USER'), env('CALDAV_PASSWORD'));
-                $arrayOfCalendars = $client->findCalendars();
-                $client->setCalendar($arrayOfCalendars[env('CALDAV_CALID')]);
-                
-                $NewEventOnServer = $client->create($NewEvent);
-        
-                return response($NewEventOnServer->getData(), 200)->header('Content-Type', 'text/plain');
-            }
+        $client = new SimpleCalDAVClient();
+    
+        try {
+            
+            $client->connect(env('CALDAV_URL'), env('CALDAV_USER'), env('CALDAV_PASSWORD'));
+            $arrayOfCalendars = $client->findCalendars();
+            $client->setCalendar($arrayOfCalendars[env('CALDAV_CALID')]);
+            
+            $NewEventOnServer = $client->create($NewEvent);
+    
+            return response($NewEventOnServer->getData(), 200)->header('Content-Type', 'text/plain');
+        }
 
         catch (Exception $e) {
             return response($e->__toString(), 200)->header('Content-Type', 'text/plain');
