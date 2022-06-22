@@ -81,12 +81,11 @@ END:VCALENDAR';
                 
                 $NewEventOnServer = $client->create($NewEvent);
         
-                echo $NewEventOnServer->getData();
-        
+                return response($NewEventOnServer->getData(), 200)->header('Content-Type', 'text/plain');
             }
 
         catch (Exception $e) {
-            echo $e->__toString();
+            return response($e->__toString(), 200)->header('Content-Type', 'text/plain');
         }
   
     }
